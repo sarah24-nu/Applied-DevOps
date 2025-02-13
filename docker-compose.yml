@@ -1,0 +1,15 @@
+name: First App System
+
+services:
+  app:
+    build:
+      context: ./
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+      - /app/node_modules/
+  db:
+    image: mongo:latest
+  redis:
+    image: redis:latest
